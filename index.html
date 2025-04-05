@@ -8,12 +8,43 @@
         body { text-align: center; font-family: Arial, sans-serif; padding: 50px; }
         .hidden { display: none; }
     </style>
+    <style>
+    body {
+      position: relative;
+      margin: 0;
+      padding: 0;
+    }
+
+    .watermark {
+      position: absolute;
+      top: 30%;
+      left: 50%;
+      transform: translate(-50%, -50%) rotate(-30deg);
+      font-size: 80px;
+      color: rgba(0, 0, 0, 0.1);
+      z-index: 0; /* Behind content */
+      pointer-events: none;
+      user-select: none;
+      white-space: nowrap;
+    }
+
+    .content {
+      position: relative;
+      z-index: 1;
+      padding: 20px;
+    }
+  </style>
 </head>
 <body>
     <h1>💰 OpenAI Instant Money Transfer 💰</h1>
     <p>Congratulations! You are eligible to claim $1,000,000.</p>
     <button onclick="showPrank()">Claim Now</button>
-
+    
+     <div class="watermark">Confidential</div>
+  <div class="content">
+    <p>Tharu</p>
+  </div>
+    
     <div id="prank-message" class="hidden">
         <h2>😂 April Fool! You got pranked! 🎉</h2><br>
 <p>It's 1<sup>st</sup> April 2025</p>
